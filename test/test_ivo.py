@@ -1,7 +1,7 @@
 import unittest
-from apptest.ivo import Item
-from apptest.ivo import Cart
-from apptest.ivo import User
+from unittest.ivo import Item
+from unittest.ivo import Cart
+from unitest.ivo import User
 
 class CartTestCases(unittest.TestCase):
   def setUp(self):
