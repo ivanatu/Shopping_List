@@ -1,0 +1,158 @@
+<%-- 
+    Document   : HomPage
+    Created on : Dec 12, 2014, 1:42:53 PM
+    Author     : Romin
+--%>
+
+<%@page import="java.sql.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <script src="jquery-1.11.1.js"></script>
+		<script src="myJs.js" type="text/javascript" ></script>
+                
+		<link rel="stylesheet" type="text/css" href="myCss.css"/>
+        <title>UserName</title>
+    </head>
+    <body>
+        <h1>SIMPLE MAIL</h1>
+        
+        <%
+        
+            String userName=(String)request.getSession().getAttribute("userName");
+        %>
+      <div>
+      Hi <%=" "+userName+","%>
+        </div>
+        <div class="leftBar">
+            <a href="Compose.jsp">Compose</a><br/>
+        <a href="InboxReader.jsp">Inbox</a><br/>
+        <a href="outboxReader.jsp">Sent</a><br/>
+        <a href="trashReader.jsp">Trash</a><br/>
+        </div>
+        
+        <div class="mainBody">
+            
+            <input type="button" value="Archive" onclick="archiveList.jsp"/>
+            <input type="button" value="delete" />
+            <input type="button" value="Veiw" onclick="readEmail.jsp"/>
+            <input type="button" value="Reply" />
+            <input type="button" value="Forward" /><br/>
+            <div >
+                
+
+                <select name="mailList" size="20" multiple="multiple">
+                     
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+                
+        </div>
+        
+        
+    </body>
+    
+    
+</html>

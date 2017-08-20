@@ -1,0 +1,70 @@
+body{
+
+    background-color:#ccffff;
+        
+}
+
+.leftBar{
+    
+    float: left;
+    margin-top: 23px;
+    width: 100px;
+    height: 531px;
+    margin-left: 20px;
+     border: 1px solid blue;
+    
+}
+
+.mainBody{
+    margin-top: 23px;
+    width: 1000px;
+    height: 531px;
+    border: 1px solid red;
+    background-color: #ffffff;
+ float: left;
+}
+
+
+.topBarLeft{
+    float: left;
+}
+
+.topRight{
+    float: right;
+}
+a:active a:visited{
+    color: #ff0000;
+}
+
+#login{
+    
+    width: 200px;
+    height: 500px;
+    border: 1px solid red;
+    float: right;
+    margin-right: 200px;
+}
+
+#login h1{
+    
+  margin-left: 500px;
+}
+
+#signUP{
+    
+    margin-left: 100px;
+}
+
+#signUP table{
+    
+    cellSpacing:20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+#contact{
+    width: 975px;
+   
+}
