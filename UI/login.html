@@ -1,50 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <title>login</title>
+    </head>
+    <body>
+        
+    <center><h1>SHOPPING WEBSITE</h1></center>
+        <div id="login">
+                <h3>Login</h3> 
+        <form  method="POST" action="pages.html">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>User ID:<input type="text" name="userName" value="" /></td>
+                    </tr>
+                    <tr>
+                        <td>Password:<input type="password" name="password" value="" /></td>
+                    </tr>
+                </tbody>
+            </table>
 
-     <link rel="stylesheet" href="css/styles.css">
-    
-    <title>Login</title>
-</head>
+            <input type="submit" value="Sign In" name="login" />
+            
+            <br/><br/>
+                OR
+            <br/><br/>
+            
+        </form>
 
-<body>
-<!-- Header navigation bar -->
-<nav class="navbar navbar">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand text-muted">Shopping</a>
+         <form method="POST" action= "create.html">
+        <input type="submit" value="Create New Account"/>
+        </form>
+        
         </div>
-    </div>
-</nav>
-
-<!-- Log In  form -->
-<form class="form-horizontal">
-    <h3 class="text-center">LOG IN</h3>
-    <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-
-            <!-- Email input-->
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Email:</label>
-                <div class="col-sm-6">
-                    <input type="email" class="form-control" id="email" placeholder="Enter email">
-                </div>
-            </div>
-
-            <!-- Password input-->
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd">Password:</label>
-                <div class="col-sm-6">
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-                </div>
-            </div>
-
-            <!-- Login button-->
-            <div class="form-group">
-                <p class="col-sm-offset-3 col-sm-9"><a href="shopping_items.html" class="btn btn-success btn-xl ">LOG IN</a></p>
-                <p class="col-sm-offset-3 col-sm-9"><a href="create.html" class="btn btn-success btn-xl ">Register</a></p>
-            </div>
-        </div>
-    </div>
-</form>
+    </body>
+</html>
