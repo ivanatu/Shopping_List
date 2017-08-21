@@ -2,7 +2,7 @@
 This renders the views of the application
 """
 from flask import render_template, session, request, url_for, redirect, flash
-from app.shopping_list_application import ShoppingListApplication
+from app.server import ShoppingListApplication
 from app import app
 
 
