@@ -1,50 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"/>
+        <title>login</title>
+        <script>
+        var message = "{{message}}";
+        </script>
+    </head>
+    <body>
+        
+    <center><h1>SHOPPING WEBSITE</h1></center>
+        <div id="login">   <h3>Login</h3> 
+        <form  id="login_form_id" method="POST" action="/login" name="login_form" class="register-form">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Username:<input type="text" name="username" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td>Password:<input type="password" name="password" value="" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-form-submit btn-login-submit" type="button" onclick="validate_inputs()">Login</button>
+          <!--   <input type="submit" value="Sign In" name="login" /> -->
+            
+            <br/><br/>
+                OR
+            <br/><br/>
+            
+        </form>
 
-     <link rel="stylesheet" href="css/styles.css">
-    
-    <title>Login</title>
-</head>
-
-<body>
-<!-- Header navigation bar -->
-<nav class="navbar navbar">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand text-muted">Shopping</a>
+      <a class="navbar-link" href="{{url_for('signup')}}" title="Sign Up">Have no Account? Sign Up</a>
+        
         </div>
-    </div>
-</nav>
+    </body>
+</html>
 
-<!-- Log In  form -->
-<form class="form-horizontal">
-    <h3 class="text-center">LOG IN</h3>
-    <div class="row">
-        <div class="col-md-9 col-md-offset-3">
-
-            <!-- Email input-->
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Email:</label>
-                <div class="col-sm-6">
-                    <input type="email" class="form-control" id="email" placeholder="Enter email">
-                </div>
-            </div>
-
-            <!-- Password input-->
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd">Password:</label>
-                <div class="col-sm-6">
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-                </div>
-            </div>
-
-            <!-- Login button-->
-            <div class="form-group">
-                <p class="col-sm-offset-3 col-sm-9"><a href="lines.html" class="btn btn-success btn-xl ">LOG IN</a></p>
-                <p class="col-sm-offset-3 col-sm-9"><a href="create.html" class="btn btn-success btn-xl ">Register</a></p>
-            </div>
-        </div>
-    </div>
-</form>
+<script type="text/javascript">
+    function validate_inputs() {
+        var username_value = document.forms["login_form"]["username"].value;
+        var password_value = document.forms["login_form"]["password"].value;
+        if (username_value.replace(" ", "") == "") {
+            show_snack_bar("Please enter username", 3000, "danger")
+        }
+        else if (username_value.replace(" ", "") != username_value || username_value.length < 3) {
+            show_snack_bar("Username should not contain spaces and should be more than 3 characters long ", 3000, "danger")
+        }
+        else if (password_value == "") {
+            show_snack_bar("Please enter password ", 3000, "danger")
+        }
+        else {
+            document.getElementById("login_form_id").submit();
+        }
+    }
+    function show_snack_bar(message, duration, type) {
+        var snack_bar = document.getElementById("snackbar")
+        snack_bar.innerHTML='<p>'+message+'</p>';
+        if (type == "danger") {
+            snack_bar.className += ' danger-snackbar';
+        }
+        else {
+            snack_bar.className += ' success-snackbar';
+        }
+        snack_bar.className += " show";
+        setTimeout(function(){ snack_bar.className = snack_bar.className.replace(" show", "").replace(" danger-snackbar", "").replace(" success-snackbar", ""); }, duration);
+    }
+    type = "danger"
+    if (message.toLowerCase().includes("success")){
+        type = "success"
+    }
+    if (message != "None") {
+        show_snack_bar(message, 3000, type);
+    }
+</script>
