@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"/>
+    <title>Create List</title>
+</head>
+<body >
+<div class="container">
+
+     <div class="container new_list_background card col-6" >
+        <h2 class="text-capitalize card-title mt-1">create Shopping List</h2>
+        
+    <form  method="POST" action="/create_shopping_list" name="create_form" class="register-form">
+            
+            <table border="0" cellpadding="1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       
+                        <td><input type="text" class="form-input form-control" name="title" value="title" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-form-submit" >Finish</button>
+    </form>
+
+    </div>
+<!-- contents of footer navigation bar -->
+
+</div>
+</body>
+
+</html>
