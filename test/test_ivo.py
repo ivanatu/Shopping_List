@@ -6,7 +6,7 @@ from apptest.ivo import User
 class CartTestCases(unittest.TestCase):
   def setUp(self):
     self.cart = Cart()
-    self.user= User('email', 'pass')
+    self.user= User('email', 'password', 'name')
     
   def test_cart_property_initialization(self):
     self.assertIsInstance(self.cart.cartlist, dict, msg='Items is not a dictionary')
