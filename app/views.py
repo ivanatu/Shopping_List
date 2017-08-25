@@ -24,13 +24,13 @@ def index():
     return render_template("login.html", message=message)
 
 
-@app.route('/signup', methods=["GET", "POST"])
-def signup():
+@app.route('/create', methods=["GET", "POST"])
+def create():
     """
     This method handles the actions for the /signup route
     """
     if request.method == "GET":
-        return render_template("signup.html")
+        return render_template("create.html")
     else:
         new_user = the_application.signup(request.form['first_name'], request.form['last_name'],
                                           request.form['username'], request.form['password'])
