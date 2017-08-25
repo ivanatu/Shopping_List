@@ -29,7 +29,7 @@ class Cart(dict):
 
 class User():
 
-    def __init__(self,  email, password, name=None):
+    def __init__(self,email, password, name):
         super().__init__()
         self.email = email
         self.password = password
@@ -38,24 +38,24 @@ class User():
         self.all_users = []
         self.shopping_lists = {}
 
-    def sign_up(self, user) -> int:
+    def sign_up(self, email, password) -> int:
    
         if [existing_user for existing_user in self.all_users
-            if existing_user.email == user.email]:
+            if existing_user.email == self.email]:
             return False
 
         if self.all_users:
             id = self.all_users[len(self.all_users) - 1].id + 1
-            user.id = id
+            self.id = id
         else:
-            user.id = 1
-        self.all_users.append(user)
+            self.id = 1
+        self.all_users.append(self)
         return user.id
 
-    def sign_in(self, user):
+    def sign_in(self, email, password):
       
         for existing_user in self.all_users:
-            if existing_user.email == user.email and existing_user.password == user.password:
+            if existing_user.email == self.email and existing_user.password == self.password:
                 return existing_user.id
         return False
 
